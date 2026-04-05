@@ -47,7 +47,8 @@ class Controller_Customergroup extends Controller_Core_Base
 
         if ($id) {
             $model = new Model_Customergroup();
-            $model->delete($id);
+            $model->load($id);
+            $model->delete();
         }
 
         $this->redirect('list', 'customergroup');
